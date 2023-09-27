@@ -1,32 +1,44 @@
-#include "sl.h"
 #include "game.h"
+
+#include "sl.h"
+
 #include "pad.h"
+#include "brick.h"
+#include "ball.h"
+#include "player.h"
 
 bool winner;
 bool loser;
+bool paused;
 bool returnToMenu;
 bool closeProgram;
 
 const int screenWidth = 800;
 const int screenHeight = 800;
 
-int barWidth = 150;  // Ancho de la barra
-int barHeight = 20;  // Altura de la barra
-int barX = (screenWidth - barWidth) / 1.68;  // Centrar la barra horizontalmente
-int barY = screenHeight - barHeight - 700; // Colocar la barra cerca de la parte inferior sin tocar el borde
+float barWidth;
+float barHeight;
+float barX;
+float barY;
 
-void init()
+void init(Player& player, Paddle& pad)
 {
-
+	winner = false;
+	paused = false;
+	returnToMenu = false;
+	player.score = 0;
+	player.lives = 3;
+	initPad(pad, {barX, barY }, {barWidth, barHeight});
 }
 
-void draw()
+void draw(Paddle& pad)
 {
-
+	drawPad(pad);
 }
 
 void runGame()
 {
+	Paddle pad;
 	
 	slWindow(screenWidth, screenHeight, "Simple SIGIL Example", false);
 
@@ -35,7 +47,8 @@ void runGame()
 		slSetBackColor(0.0, 0.0, 0.0);
 
 		slSetForeColor(1, 0, 0, 1);
-		slRectangleFill(barX, barY, barWidth, barHeight);
+		
+		draw(pad);
 
 		slRender();
 	}

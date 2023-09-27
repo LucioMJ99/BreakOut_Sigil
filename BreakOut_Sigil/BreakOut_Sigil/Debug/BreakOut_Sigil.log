@@ -3,10 +3,5 @@
   E:\Users\lucio\Documents\GitHub\BreakOut_Sigil\BreakOut_Sigil\lib\sigil-vc2015\sigil.dll
   E:\Users\lucio\Documents\GitHub\BreakOut_Sigil\BreakOut_Sigil\lib\sigil-vc2015\wrap_oal.dll
   4 archivo(s) copiado(s)
-  ball.cpp
   game.cpp
-E:\Users\lucio\Documents\GitHub\BreakOut_Sigil\BreakOut_Sigil\BreakOut_Sigil\game.cpp(15,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-  main.cpp
-  pad.cpp
-  Generating Code...
   BreakOut_Sigil.vcxproj -> E:\Users\lucio\Documents\GitHub\BreakOut_Sigil\BreakOut_Sigil\Debug\BreakOut_Sigil.exe
